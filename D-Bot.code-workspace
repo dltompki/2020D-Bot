@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "2020D-Bot"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
