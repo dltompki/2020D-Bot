@@ -9,41 +9,43 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
- * An example command that uses an example subsystem.
+ * The TankDrive command uses two joystick values from the DriveTrain subsystem to drive the robot
+ * with the API tankDrive method.
  */
-public class ExampleCommand extends CommandBase {
+public class TankDrive extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
+  
   private final DriveTrain m_subsystem;
 
+  private DifferentialDrive m_DifferentialDrive;
+
   /**
-   * Creates a new ExampleCommand.
+   * Creates a new TankDrive.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ExampleCommand(DriveTrain subsystem) {
+  public TankDrive(DriveTrain subsystem) {
     m_subsystem = subsystem;
-    // Use addRequirements() here to declare subsystem dependencies.
+
     addRequirements(subsystem);
   }
 
-  // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_DifferentialDrive = new DifferentialDrive(leftMotor, rightMotor)
   }
 
-  // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
   }
 
-  // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
   }
 
-  // Returns true when the command should end.
   @Override
   public boolean isFinished() {
     return false;
