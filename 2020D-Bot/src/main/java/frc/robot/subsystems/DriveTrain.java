@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Joystick;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 /*
 * The DriveTrain subsystem controls the movement of the robot around the field, using joysticks
@@ -25,12 +26,17 @@ public class DriveTrain extends SubsystemBase {
   private Joystick m_JoystickL;
   private Joystick m_JoystickR;
 
-  public 
+  public CANSparkMax m_SparkMax1;
+  public CANSparkMax m_SparkMax2;
+  public CANSparkMax m_SparkMax3;
+  public CANSparkMax m_SparkMax4;
 
   public DriveTrain() {
 
     m_JoystickL = new Joystick(0);
     m_JoystickR = new Joystick(1);
+
+    m_SparkMax1 = new CANSparkMax(1, MotorType.kBrushless);
 
   }
 
