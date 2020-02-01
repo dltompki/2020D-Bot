@@ -18,9 +18,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class TankDrive extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   
-  private final DriveTrain m_subsystem;
-
-  private DifferentialDrive m_DifferentialDrive;
+  private final DriveTrain m_DriveTrain;
 
   /**
    * Creates a new TankDrive.
@@ -28,18 +26,19 @@ public class TankDrive extends CommandBase {
    * @param subsystem The subsystem used by this command.
    */
   public TankDrive(DriveTrain subsystem) {
-    m_subsystem = subsystem;
+    m_DriveTrain = subsystem;
 
     addRequirements(subsystem);
   }
 
   @Override
   public void initialize() {
-    m_DifferentialDrive = new DifferentialDrive(leftMotor, rightMotor)
+
   }
 
   @Override
   public void execute() {
+    m_DriveTrain.tankDrive(m_DriveTrain.getJoystickR(), m_DriveTrain.getJoystickL());
   }
 
   @Override
