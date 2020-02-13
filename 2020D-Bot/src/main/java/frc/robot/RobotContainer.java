@@ -8,10 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.DriveTrain;
-import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.DriveTrainC;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -20,10 +20,12 @@ import edu.wpi.first.wpilibj2.command.Command;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
-  private final DriveTrain m_DriveTrain = new DriveTrain();
-  private final TankDrive m_TankDrive = new TankDrive(m_DriveTrain);
-
+  // ---CONTROLLERS---
+  Joystick m_driveStickR = new Joystick(Constants.kJoystickR);
+  Joystick m_driveStickL = new Joystick(Constants.kJoystickL);
+  
+  // ---SUBSYSTEMS---
+  private final DriveTrain m_DriveTrain = new DriveTrainC(m_driveStickL, m_driveStickR);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.

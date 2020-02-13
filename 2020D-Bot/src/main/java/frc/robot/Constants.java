@@ -16,11 +16,12 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    //joystick
+    // ---JOYSTICKS---
     public static final int kJoystickL = 0;
     public static final int kJoystickR = 1;
 
-    // CAN Motor contollers
+    // ---CAN IDs---
+    // DriveTrain
     public static final int kDriveSparkFL = 1;
     public static final int kDriveSparkFR = 2;
     public static final int kDriveSparkBL = 3;

@@ -9,7 +9,6 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
  * The TankDrive command uses two joystick values from the DriveTrain subsystem to drive the robot
@@ -22,6 +21,7 @@ public class TankDrive extends CommandBase {
 
   /**
    * Creates a new TankDrive.
+   * Adds DriveTrain as a requirement.
    *
    * @param subsystem The subsystem used by this command.
    */
@@ -32,21 +32,10 @@ public class TankDrive extends CommandBase {
   }
 
   @Override
-  public void initialize() {
-
-  }
-
-  @Override
+  /**
+   * Calls the tank drive method with joystick values as arguments.
+   */
   public void execute() {
     m_DriveTrain.tankDrive(m_DriveTrain.getJoystickR(), m_DriveTrain.getJoystickL());
-  }
-
-  @Override
-  public void end(boolean interrupted) {
-  }
-
-  @Override
-  public boolean isFinished() {
-    return false;
   }
 }
