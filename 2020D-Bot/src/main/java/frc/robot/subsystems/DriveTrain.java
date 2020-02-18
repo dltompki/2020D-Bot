@@ -81,5 +81,6 @@ public class DriveTrain extends SubsystemBase {
    */
   public void slowTankDrive(double rightSpeed, double leftSpeed) {
     m_DifferentialDrive.tankDrive(leftSpeed, rightSpeed, false);
+    System.out.println("leftSpeed: " + leftSpeed + " rightSpeed: " + rightSpeed);
   }
 }

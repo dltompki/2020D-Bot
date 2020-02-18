@@ -23,8 +23,8 @@ public final class Constants {
     // ---CAN IDs---
     // DriveTrain
     public static final int kDriveSparkFL = 1;
-    public static final int kDriveSparkFR = 2;
-    public static final int kDriveSparkBL = 3;
-    public static final int kDriveSparkBR = 4;
+    public static final int kDriveSparkBL = 2;
+    public static final int kDriveSparkBR = 3;
+    public static final int kDriveSparkFR = 4;
 
 }
