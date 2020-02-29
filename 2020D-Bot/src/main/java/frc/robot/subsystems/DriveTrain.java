@@ -51,7 +51,7 @@ public class DriveTrain extends SubsystemBase {
    * @return The value of the vertical axis on the right {@link Joystick}.
    */
   public double getJoystickR() {
-    return m_JoystickR.getY();
+    return m_JoystickR.getX();
   }
 
   /**
@@ -70,7 +70,7 @@ public class DriveTrain extends SubsystemBase {
    * @param leftSpeed The speed the left side of the {@link tankDrive}
    */
   public void tankDrive(double rightSpeed, double leftSpeed) {
-    m_DifferentialDrive.tankDrive(leftSpeed, rightSpeed, true);
+    m_DifferentialDrive.arcadeDrive(leftSpeed, rightSpeed, true);
   }
 
   /**
